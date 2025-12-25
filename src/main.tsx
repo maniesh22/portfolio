@@ -8,8 +8,8 @@ import './styles/tailwind.css'
 // GitHub Pages uses /portfolio-ready/, Docker/K8s uses /
 const getBasename = () => {
   const path = window.location.pathname
-  if (path.includes('github.io')) {
-    return '/'
+  if (path. includes('github.io')) {
+    return '/portfolio-ready/'
   }
   return '/'
 }
