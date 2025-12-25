@@ -9,7 +9,7 @@ import './styles/tailwind.css'
 const getBasename = () => {
   const path = window.location.pathname
   if (path.includes('github.io')) {
-    return '/portfolio-ready/'
+    return '/'
   }
   return '/'
 }
