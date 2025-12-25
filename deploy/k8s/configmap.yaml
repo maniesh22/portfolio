@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-config
+  namespace: portfolio
+data:
+  VITE_BASENAME: "/<REPO_NAME>"
+  VITE_SITE_TITLE: "Manish Prajapati — Portfolio"
