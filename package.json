@@ -3,7 +3,7 @@
   "name": "manish-prajapati-portfolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://<USERNAME>.github.io/<REPO_NAME>/",
+  "homepage": "https://maniesh22.github.io/portfolio-ready/",
   "scripts": {
     "dev": "vite --open --port 5173",
     "build": "vite build",
