@@ -4,14 +4,10 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './styles/tailwind.css'
 
-// Determine basename based on environment
-// GitHub Pages uses /portfolio-ready/, Docker/K8s uses /
+// Type assertion to fix TypeScript error
 const getBasename = () => {
-  const path = window.location.pathname
-  if (path. includes('github.io')) {
-    return '/portfolio-ready/'
-  }
-  return '/'
+  if ((import.meta as any).env.DEV) return '/'
+  return '/portfolio-ready/'
 }
 
 createRoot(document.getElementById('root')!).render(
