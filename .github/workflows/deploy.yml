@@ -3,8 +3,6 @@ name: Build and deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 permissions:
   contents: read
@@ -14,8 +12,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      dist_exists: ${{ steps.check-dist.outputs.dist_exists }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,27 +28,19 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Show dist (debug + check)
-        id: check-dist
+      - name: Ensure dist exists & add .nojekyll
         run: |
-          echo "PWD: $(pwd)"
-          echo "---- root files ----"
-          ls -la
-          echo "---- dist files ----"
-          if [ -d "./dist" ]; then
-            ls -la ./dist
-            echo "---- head of dist/index.html ----"
-            sed -n '1,200p' ./dist/index.html || true
-            echo "dist_exists=true" >> $GITHUB_OUTPUT
-          else
-            echo "dist_exists=false" >> $GITHUB_OUTPUT
-            echo "ERROR: dist directory not found"
+          if [ ! -d "./dist" ]; then
+            echo "ERROR: dist not found. Failing."
+            ls -la
             exit 1
           fi
-        shell: bash
+          echo "Adding .nojekyll to dist to prevent GitHub Pages Jekyll processing"
+          touch dist/.nojekyll
+          echo "---- head of dist/index.html ----"
+          sed -n '1,160p' dist/index.html || true
 
       - name: Upload artifact (dist)
-        if: steps.check-dist.outputs.dist_exists == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -60,13 +48,15 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Print deployed URL (debug)
-        run: echo "PAGE_URL=${{ steps.deployment.outputs.page_url }}"
+      - name: Wait briefly
+        run: sleep 6
+
+      - name: Show deployed page HTML (debug)
+        run: |
+          echo "PAGE_URL=${{ steps.deployment.outputs.page_url }}"
+          curl -sL "${{ steps.deployment.outputs.page_url }}" | sed -n '1,160p'
