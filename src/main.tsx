@@ -7,7 +7,7 @@ import './styles/tailwind.css'
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HashRouter>
-      <App />
+      <App /> 
     </HashRouter>
   </React.StrictMode>
 )
