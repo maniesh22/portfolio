@@ -1,8 +1,14 @@
-/* e.g. src/index.css */
 @import "tailwindcss";
 
+/* ADD THIS SECTION */
+@layer base {
+  html, body {
+    /* Apply the theme colors to the entire document root */
+    @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-white;
+  }
+}
 
-/* reduced motion preference */
+/* reduced motion preference (Keep your existing code below) */
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }

@@ -94,7 +94,7 @@ export const Loader: React.FC<LoaderProps> = ({ children }) => {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="w-full h-full"
+          className="flex flex-col min-h-screen"
         >
           {children}
         </motion.div>
