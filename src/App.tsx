@@ -14,7 +14,7 @@ export default function App() {
   return (
     <div className='min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-white'>
       <Loader>
-        <header className='p-6 border-b'>
+        <header className='p-6'>
           <nav className='container mx-auto flex justify-between items-center'>
             <Logo />
             <div className='flex items-center space-x-6 text-sm font-medium'>
@@ -31,6 +31,8 @@ export default function App() {
               <Route path='/' element={<Home />} />
               <Route path='/projects' element={<Projects />} />
               <Route path='/contact' element={<Contact />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/experience' element={<Experience />} />
             </Routes>
           </AnimatePresence>
         </main>
