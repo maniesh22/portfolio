@@ -49,10 +49,10 @@ export default function App() {
   // --- Scroll & Header Logic ---
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
-    setScrolled(latest > 50);
+    setScrolled(latest > 5);
 
     // Hide header on scroll down, show on scroll up
-    if (latest > previous && latest > 150) {
+    if (latest > previous && latest > 15) {
       setHidden(true);
     } else {
       setHidden(false);
@@ -146,7 +146,7 @@ export default function App() {
               </button>
               
               <button onClick={() => scrollToSection('projects')} className={getLinkClass('projects')}>
-                Work
+                Projects
                 {activeSection === 'projects' && location.pathname === '/' && (
                   <motion.span layoutId="active-dot" className="absolute -bottom-2 left-0 right-0 h-1 bg-indigo-600 rounded-full" />
                 )}
