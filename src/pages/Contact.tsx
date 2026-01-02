@@ -72,10 +72,8 @@ export default function Contact() {
         {/* --- RIGHT COLUMN: Action Cards --- */}
         <div className='space-y-4 pt-4 md:pt-0'>
           
-          {/* 1. Email Card (Click to Mail + Copy) */}
-          <div className="relative"> {/* Container for tooltip positioning */}
-            
-            {/* The Floating Notification */}
+          {/* 1. Email Card */}
+          <div className="relative">
             <AnimatePresence>
               {copied && (
                 <motion.div
@@ -110,20 +108,24 @@ export default function Contact() {
             </motion.button>
           </div>
 
-          {/* 2. Resume Download Card */}
+          {/* 2. Resume Download Card (FIXED) */}
           <motion.a
-            href='/portfolio/Manish_Prajapati_Resume.pdf' // Adjusted path based on earlier context
+            href='/portfolio/Manish_Prajapati_Resume.pdf'
             download
-            whileHover={{ scale: 1.02, backgroundColor: "rgba(241, 245, 249, 1)" }}
-            className='flex items-center justify-between p-6 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-indigo-500 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400 transition-colors bg-transparent'
+            whileHover={{ scale: 1.02 }} 
+            className='group flex items-center justify-between p-6 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-indigo-500 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400 transition-all duration-300'
           >
             <div className='flex items-center gap-4'>
-              <div className='p-3 bg-slate-100 dark:bg-slate-800 rounded-lg'>
+              <div className='p-3 bg-slate-100 dark:bg-slate-800 rounded-lg group-hover:bg-white dark:group-hover:bg-slate-700 transition-colors'>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
               </div>
               <div className='text-left'>
-                <div className='font-bold text-slate-900 dark:text-white'>My Resume</div>
-                <div className='text-sm'>PDF Format • 2.4 MB</div>
+                <div className='font-bold text-slate-900 dark:text-white group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors'>
+                  My Resume
+                </div>
+                <div className='text-sm text-slate-500 dark:text-slate-400 group-hover:text-indigo-600/80 dark:group-hover:text-indigo-400/80 transition-colors'>
+                  PDF Format • 2.4 MB
+                </div>
               </div>
             </div>
             
