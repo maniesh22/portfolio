@@ -12,7 +12,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
     "test": "vitest",
     "zip": "node ./scripts/make-zip.js",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "vite build --base=/portfolio/ && gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^10.12.16",

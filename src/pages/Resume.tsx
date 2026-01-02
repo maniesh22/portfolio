@@ -3,6 +3,11 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 export default function Resume() {
+  // Dynamically construct the correct path based on the environment
+  // This will be "/Resume.pdf" locally
+  // And "/portfolio/Resume.pdf" on GitHub Pages
+  const resumeUrl = `${import.meta.env.BASE_URL}Manish_Prajapati_Resume.pdf`
+
   return (
     <div className="container mx-auto px-4 py-12 pt-32 min-h-screen flex flex-col items-center">
       
@@ -24,7 +29,8 @@ export default function Resume() {
           </Link>
           
           <motion.a
-            href="/portfolio/Manish_Prajapati_Resume.pdf"
+            // dynamic BASE_URL variable
+            href={resumeUrl}
             download
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white font-medium rounded-lg shadow-lg shadow-indigo-500/30 hover:bg-indigo-700 transition-colors"
             whileHover={{ scale: 1.05 }}
@@ -52,7 +58,8 @@ export default function Resume() {
 
         {/* The PDF Object */}
         <iframe 
-          src="/portfolio/Manish_Prajapati_Resume.pdf#toolbar=0" 
+          // dynamic BASE_URL variable
+          src={`${resumeUrl}#toolbar=0`} 
           className="w-full h-full relative z-10"
           title="Resume PDF"
         />
