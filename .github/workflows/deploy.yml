@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npm run build:github
 
       - name: Ensure dist exists & add .nojekyll
         run: |
