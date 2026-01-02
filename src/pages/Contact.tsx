@@ -124,7 +124,7 @@ export default function Contact() {
                   My Resume
                 </div>
                 <div className='text-sm text-slate-500 dark:text-slate-400 group-hover:text-indigo-600/80 dark:group-hover:text-indigo-400/80 transition-colors'>
-                  PDF Format • 2.4 MB
+                  PDF Format • 117 KB
                 </div>
               </div>
             </div>
