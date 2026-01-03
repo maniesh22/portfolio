@@ -12,6 +12,7 @@ import Resume from './pages/Resume'
 
 import { Loader } from './shared/Loader'
 import { Logo } from './shared/Logo'
+import Footer from './components/Footer';
 
 // --- Sub-Component: The Main Scrollable Page ---
 const LandingPage = () => {
@@ -175,9 +176,10 @@ export default function App() {
           </AnimatePresence>
         </main>
         
-        <footer className='p-6 text-center text-sm border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900'>
+        {/* <footer className='p-6 text-center text-sm border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900'>
           © {new Date().getFullYear()} Manish Prajapati
-        </footer>
+        </footer> */}
+        <Footer />
       </Loader>
     </div>
   )
