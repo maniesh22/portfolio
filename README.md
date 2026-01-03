@@ -8,9 +8,6 @@
 
 A modern, high-performance developer portfolio website built with **React**, **TypeScript**, and **Tailwind CSS**. It features smooth animations powered by **Framer Motion**, a responsive "Bento Grid" layout, and a fully accessible Dark Mode.
 
-![Portfolio Preview](https://via.placeholder.com/1200x600?text=Portfolio+Preview+Image) 
-*(Replace this link with an actual screenshot of your site)*
-
 ---
 
 ## 🚀 Features
