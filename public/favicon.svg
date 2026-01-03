@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <path d="M50 5 L93.3 25 V75 L50 95 L6.7 75 V25 L50 5Z" fill="#453de390"/>
+  <path d="M50 5 L93.3 25 V75 L50 95 L6.7 75 V25 L50 5Z" fill="#453de3ff"/>
   
   <text x="50" y="65" text-anchor="middle" font-family="sans-serif" font-size="42" font-weight="bold" fill="white">M</text>
 </svg>
