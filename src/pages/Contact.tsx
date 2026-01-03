@@ -5,7 +5,7 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
   const [fileSize, setFileSize] = useState<string>('Loading size...');
   
-  const email = "manish381364@gmail.com";
+  const email = "maniesh22.prajapati@gmail.com";
   const resumePath = `${import.meta.env.BASE_URL}Manish_Prajapati_Resume.pdf`;
 
   // --- Logic to Fetch File Size ---
